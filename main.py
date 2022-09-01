@@ -4,7 +4,7 @@ class Usuario:
         self.id = id
         self.senha = senha
         
-class Loja:
+class Projeto:
 
     def __init__(self, numero, supervisorio, ip, usuario, senha, endereco, comentarios):
         self.numero = numero
@@ -21,26 +21,30 @@ class Loja:
             self.status_resfriados = status
         else:
             raise Exception('Opção inválida')
-
+        return status
+        
     def sts_supervisao_congelados(self, status):
         if status in self.sts:
             self.status_congelados = status
         else:
             raise Exception('Opção inválida')
+        return status
 
     def sts_supervisao_iluminacao(self, status):
         if status in self.sts:
             self.status_iluminacao = status
         else:
             raise Exception('Opção inválida')
+        return status
 
     def sts_supervisao_arcondicionado(self, status):
         if status in self.sts:
             self.status_arcondicionado = status
         else:
             raise Exception('Opção inválida')
+        return status
 
-class Status(Loja):
+class Status(Projeto):
     
     def __init__(self, numero, supervisorio, ip, usuario, senha, endereco, comentarios, status_resfriados, status_congelados, status_iluminacao, status_arcondicionado):
         super().__init__(numero, supervisorio, ip, usuario, senha, endereco, comentarios)
@@ -49,9 +53,7 @@ class Status(Loja):
         self.status_iluminacao = status_iluminacao
         self.status_arcondicionado = status_arcondicionado
     
-   
-    
-            
+                
 
 ## Testando criação de Objetos
 
